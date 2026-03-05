@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="LinkedIn Integration" icon-name="custom:custom63">
+        <div class="slds-p-horizontal_medium">
+            <lightning-button label="Connect to LinkedIn" onclick={handleConnect} class="slds-m-bottom_small"></lightning-button>
+            <template if:true={isConnected}>
+                <p>Connected to LinkedIn! Now send Authorization Request to get Access Token</p>
+                <lightning-button label="Complete Authorization" onclick={handleAuthorize} class="slds-m-bottom_small"></lightning-button>
+            </template>
+
+            <template if:true={isAuthorized}>
+                <p>Authorization successful! You can now access LinkedIn data.</p>
+                <!-- Display additional LinkedIn data or actions here -->
+
+            </template>
+        </div>
+    </lightning-card>
+</template>
